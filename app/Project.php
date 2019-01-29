@@ -16,10 +16,10 @@ class Project extends Model
     ];
 
     public function users(){
-        return $this->belongTo('App\Models\User');
+        return $this->belongToMany('App\User');
     }
 
     public function comapnies(){
-        return $this->belongTo('App\Models\Company');
+        return $this->belongTo('App\Company');
     }
 }

@@ -38,18 +38,22 @@ class User extends Authenticatable
 
     //Relationship
     public function tasks(){
-        return $this->hasMany('App\Models\Task');
+        return $this->belongToMany('App\Task');
     }
 
     public function comments(){
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Comment');
     }
 
     public function roles(){
-        return $this->belongTo('App\Models\Role');
+        return $this->belongTo('App\Role');
     }
 
     public function companies(){
-        return $this->hasMany('App\Models\Company');
+        return $this->hasMany('App\Company');
+    }
+
+    public function projects(){
+        return $this->belongToMany('App\Project');
     }
 }

@@ -17,14 +17,14 @@ class Task extends Model
     ];
 
     public function users(){
-        return $this->belongTo('App\Models\User');
+        return $this->belongToMany('App\User');
     }
 
     public function projects(){
-        return $this->belongTo('App\Models\Project');
+        return $this->belongTo('App\Project');
     }
 
     public function companies(){
-        return $this->belongTo('App\Models\Company');
+        return $this->belongTo('App\Company');
     }
 }
