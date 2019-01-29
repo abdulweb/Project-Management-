@@ -15,4 +15,16 @@ class Task extends Model
         'hours',
         'days',
     ];
+
+    public function users(){
+        return $this->belongTo('App\Models\User');
+    }
+
+    public function projects(){
+        return $this->belongTo('App\Models\Project');
+    }
+
+    public function companies(){
+        return $this->belongTo('App\Models\Company');
+    }
 }
