@@ -25,6 +25,7 @@ class User extends Authenticatable
         'city', 
         'role_id',
     ];
+    
 
     /**
      * The attributes that should be hidden for arrays.
@@ -34,4 +35,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //Relationship
+    public function tasks(){
+        return $this->hasMany('App\Models\Task');
+    }
+
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function roles(){
+        return $this->belongTo('App\Models\Role');
+    }
+
+    public function companies(){
+        return $this->hasMany('App\Models\Company');
+    }
 }
