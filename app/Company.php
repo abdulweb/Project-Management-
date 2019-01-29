@@ -12,4 +12,7 @@ class Company extends Model
         'description',
         'user_id',
     ];
+    public function users(){
+        return $this->belongTo('App\Models\User');
+    }
 }
