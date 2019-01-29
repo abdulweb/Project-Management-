@@ -10,4 +10,9 @@ class Role extends Model
      protected $fillable =[
         'name',
     ];
+
+    //Relationship
+    public function users(){
+        return $this->hasMany('App\Models\User');
+    }
 }
